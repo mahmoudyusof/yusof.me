@@ -1,10 +1,5 @@
 <template>
   <main>
-    <ContentDoc :path="path" />
+    <ContentDoc />
   </main>
 </template>
-
-<script setup>
-  const route = useRoute()
-  const path = route.fullPath.replace("/blog", "");
-</script>
