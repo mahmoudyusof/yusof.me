@@ -1,5 +1,18 @@
+
+<script setup>
+useHead({
+
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/svg',
+      href: 'http://localhost:3000/favicon.svg'
+    }
+  ]
+})
+</script>
 <template>
-  <main>
+  <NuxtLayout>
     <ContentDoc />
-  </main>
+  </NuxtLayout>
 </template>
