@@ -11,14 +11,14 @@ useHead({
 })
 </script>
 <template>
-  <div id="article" class="container mx-auto py-10 bg-slate-700/60 p-10 rounded-3xl my-10">
+  <div id="article" class="container mx-auto py-10 bg-slate-800 p-10 rounded-3xl my-10">
     <ContentDoc />
   </div>
 </template>
 
 <style>
 #article code, #article pre {
-    @apply bg-gray-800 text-white p-1 rounded px-5;
+    @apply bg-gray-950 text-white p-1 rounded px-5;
 }
 
 #article code {

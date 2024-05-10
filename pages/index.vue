@@ -13,6 +13,11 @@
                 :article="{ link: article._path, title: article.title, description: article.description, image: article.image }">
             </ArticleCard>
         </ContentList>
+        <ContentList v-slot="{ list }" path="/blog">
+            <ArticleCard v-for="article of list" :key="article._path"
+                :article="{ link: article._path, title: article.title, description: article.description, image: article.image }">
+            </ArticleCard>
+        </ContentList>
     </section>
 </template>
 

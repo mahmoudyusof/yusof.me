@@ -6,7 +6,10 @@ export default defineNuxtConfig({
     head: {
       link: [
         { rel: "icon", type: "image/svg", href: "/favicon.svg" }
-      ]
+      ],
+      htmlAttrs: {
+        lang: "en"
+      }
     }
   },
   postcss: {
@@ -20,7 +23,7 @@ export default defineNuxtConfig({
     highlight: {
       langs: ['javascript', 'python', 'shell', 'typescript', 'json', 'yaml', 'css', 'html', 'markdown', 'bash', 'dockerfile'],
       theme: {
-        default: "one-dark-pro",
+        default: "catppuccin-mocha",
         dark: "github-dark",
       },
     }
