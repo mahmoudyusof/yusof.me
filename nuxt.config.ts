@@ -23,9 +23,6 @@ export default defineNuxtConfig({
         default: "one-dark-pro",
         dark: "github-dark",
       },
-    },
-    documentDriven: {
-      layoutFallbacks: ['article'],
     }
   },
   modules: ["@nuxt/content", 'nuxt-icon']
