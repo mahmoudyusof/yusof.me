@@ -7,12 +7,7 @@
         <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
             officially yours. Use it wisely</p>
     </section>
-    <section class="columns-2 md:columns-3 container mx-auto space-y-3 mt-56">
-        <ContentList v-slot="{ list }" path="/blog">
-            <ArticleCard v-for="article of list" :key="article._path"
-                :article="{ link: article._path, title: article.title, description: article.description, image: article.image }">
-            </ArticleCard>
-        </ContentList>
+    <section class="columns-2 md:columns-3 container mx-auto pb-10 mt-56">
         <ContentList v-slot="{ list }" path="/blog">
             <ArticleCard v-for="article of list" :key="article._path"
                 :article="{ link: article._path, title: article.title, description: article.description, image: article.image }">
