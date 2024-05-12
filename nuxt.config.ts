@@ -29,5 +29,8 @@ export default defineNuxtConfig({
       },
     }
   },
+  routeRules : {
+    '/':  {prerender: true},
+  },
   modules: ["@nuxt/content", 'nuxt-icon']
 })
