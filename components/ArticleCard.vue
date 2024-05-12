@@ -1,12 +1,15 @@
 <template>
     <div
-        class="glow bg-gray-800 group transition-all mb-3 relative break-inside-avoid rounded-3xl border border-violet-600">
-        <nuxt-link :to="article.link">
-            <div class="bg-gray-800 rounded-3xl">
-                <img v-if="article.image" class="w-full rounded-t-3xl transition-all"
-                    :src="article.image" :alt="article.title">
-                <h3 class="px-5 py-3 text-3xl">{{ article.title }}</h3>
-                <p class="px-5 py-3">{{ article.description }}</p>
+        class="glow h-full bg-gray-800 group opacity-75 hover:opacity-100 hover:scale-105 transition-all relative rounded-3xl border border-violet-600">
+        <nuxt-link :to="article.link" class="block h-full">
+            <div class="bg-gray-800 rounded-3xl flex h-full">
+                <img v-if="article.image" class="w-full rounded-l-3xl transition-all max-w-56" :src="article.image"
+                    :alt="article.title">
+                <div class="flex flex-col justify-evenly px-6">
+
+                    <h3 class="text-3xl">{{ article.title }}</h3>
+                    <p class="">{{ article.description }}</p>
+                </div>
             </div>
         </nuxt-link>
     </div>
@@ -34,7 +37,6 @@ const { article } = defineProps<{ article: Article }>();
     z-index: 1;
     display: inline-block;
     width: 100%;
-    height: fit-content;
 }
 
 .glow::after,
@@ -56,7 +58,7 @@ const { article } = defineProps<{ article: Article }>();
 }
 
 .glow::after {
-    filter: blur(3.5rem);
+    filter: blur(3rem);
 }
 
 @keyframes rotation {

@@ -17,16 +17,9 @@ useHead({
         <ContentRenderer :value="doc" />
       </div>
       <div class="bg-slate-800 py-10 rounded-3xl col-span-1">
-        <ul class=" sticky top-24">
-          <li v-for="link in doc.body.toc.links" :key="link.id">
-            <a :href="`#${link.id}`">{{ link.text }}</a>
-            <ul v-if="link.children">
-              <li v-for="child in link.children" :key="`${link.id}-${child.id}`">
-                <a :href="`#${child.id}`">{{ child.text }}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <span class="sticky top-24">
+          <RecursiveToc :links="doc.body.toc.links" />
+        </span>
       </div>
     </ContentDoc>
   </div>

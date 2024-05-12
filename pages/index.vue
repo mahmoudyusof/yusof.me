@@ -7,7 +7,7 @@
         <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
             officially yours. Use it wisely</p>
     </section>
-    <section class="columns-2 md:columns-3 container mx-auto pb-10 mt-56">
+    <section class="container mx-auto card-container pb-10 mt-56">
         <ContentList v-slot="{ list }" path="/blog">
             <ArticleCard v-for="article of list" :key="article._path"
                 :article="{ link: article._path, title: article.title, description: article.description, image: article.image }">
@@ -37,5 +37,11 @@
     opacity: 0;
     animation: 0.8s ease-in-out 1 fadeDown forwards;
 
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 1rem;
 }
 </style>
