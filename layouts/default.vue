@@ -2,7 +2,9 @@
     <nav :class="`bg-black/5 flex fixed top-0 py-2 left-0 w-full backdrop-blur-3xl z-50
         backdrop-brightness-110 backdrop-saturate-200 justify-between px-16 align-middle`">
         <div id="logo" class="flex gap-8 justify-center items-center">
-            <img src="/logo.svg" alt="Nuxt Logo" width="90" height="60" />
+            <nuxt-link to="/">
+                <img src="/logo.svg" alt="Nuxt Logo" width="90" height="60" />
+            </nuxt-link>
         </div>
         <div class="flex items-center space-x-3">
             <nuxt-link active-class="text-white" to="/">

@@ -4,11 +4,12 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   app: {
     head: {
+      titleTemplate: 'MJ Blog | %s',
       link: [
         { rel: "icon", type: "image/svg", href: "/favicon.svg" }
       ],
       htmlAttrs: {
-        lang: "en"
+        lang: "en",
       }
     }
   },

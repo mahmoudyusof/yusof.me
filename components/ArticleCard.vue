@@ -1,11 +1,11 @@
 <template>
     <div
-        class="glow h-full bg-gray-800 group opacity-75 hover:opacity-100 hover:scale-105 transition-all relative rounded-3xl border border-violet-600">
+        class="glow h-full bg-gray-800 group opacity-75 hover:opacity-100 hover:scale-105 transition-all relative rounded-3xl border border-slate-600">
         <nuxt-link :to="article.link" class="block h-full">
             <div class="bg-gray-800 rounded-3xl flex h-full">
                 <img v-if="article.image" class="w-full rounded-l-3xl transition-all max-w-56" :src="article.image"
                     :alt="article.title">
-                <div class="flex flex-col justify-evenly px-6">
+                <div class="flex flex-col justify-evenly px-6 py-3">
 
                     <h3 class="text-3xl">{{ article.title }}</h3>
                     <p class="">{{ article.description }}</p>
@@ -22,7 +22,7 @@ type Article = {
     image?: string,
     link: string
 }
-const { article } = defineProps<{ article: Article }>();
+const article = defineProps<Article>();
 </script>
 
 <style>
@@ -41,15 +41,9 @@ const { article } = defineProps<{ article: Article }>();
 
 .glow::after,
 .glow::before {
-    inset: -5px;
+    inset: -2px;
     content: '';
     position: absolute;
-    /* background: conic-gradient(from var(--gradient-angle),
-    theme('colors.violet.500'),
-    theme('colors.teal.500'),
-    theme('colors.violet.950'),
-    theme('colors.teal.500'),
-    theme('colors.violet.500')); */
     background: conic-gradient(from var(--gradient-angle), transparent 0%, theme('colors.violet.400') 1%, transparent 10%, transparent 19%, theme('colors.violet.400') 20%, transparent 30%);
     animation: linear infinite 7s rotation;
     break-inside: avoid;

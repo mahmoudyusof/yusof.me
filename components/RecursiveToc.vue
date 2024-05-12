@@ -8,5 +8,12 @@
 </template>
 
 <script setup lang="ts">
-const {links} = defineProps<{ links: any[]}>();
+type Link = {
+    id: string,
+    text: string,
+    depth: number,
+    children?: Link[]
+}
+const {links} = defineProps<{ links: Link[]}>();
+
 </script>
