@@ -28,7 +28,7 @@ useHead({
 <style>
 #article code,
 #article pre {
-  @apply bg-gray-950 text-white p-1 rounded px-5 text-wrap;
+  @apply bg-black text-white p-1 rounded px-5 text-wrap;
 }
 
 #article code {

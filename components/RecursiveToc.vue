@@ -1,7 +1,7 @@
 <template>
     <ul>
         <li v-for="link in links" :key="link.id">
-        <a :href="`#${link.id}`">{{ link.text }}</a>
+        <nuxt-link active-class="text-white" class="hover:underline text-slate-200 hover:text-white" :href="`#${link.id}`">{{ link.text }}</nuxt-link>
         <RecursiveToc v-if="link.children" :links="link.children" />
         </li>
     </ul>

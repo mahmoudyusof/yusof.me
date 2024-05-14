@@ -24,13 +24,13 @@ export default defineNuxtConfig({
     highlight: {
       langs: ['javascript', 'python', 'shell', 'typescript', 'json', 'yaml', 'css', 'html', 'markdown', 'bash', 'dockerfile'],
       theme: {
-        default: "catppuccin-mocha",
+        default: "one-dark-pro",
         dark: "github-dark",
       },
     }
   },
   routeRules : {
-    '/':  {prerender: true},
+    '/**':  {static: true},
   },
-  modules: ["@nuxt/content", 'nuxt-icon']
+  modules: ["@nuxt/content", 'nuxt-icon', "@nuxt/image"]
 })

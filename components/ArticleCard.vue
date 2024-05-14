@@ -1,10 +1,10 @@
 <template>
     <div
-        class="glow h-full bg-gray-800 group opacity-75 hover:opacity-100 hover:scale-105 transition-all relative rounded-3xl border border-slate-600">
+        class="shine h-full bg-gray-800 group opacity-75 hover:opacity-100 hover:scale-105 transition-all relative rounded-3xl border border-slate-600">
         <nuxt-link :to="article.link" class="block h-full">
             <div class="bg-gray-800 rounded-3xl flex h-full">
-                <img v-if="article.image" class="w-full rounded-l-3xl transition-all max-w-56" :src="article.image"
-                    :alt="article.title">
+                <nuxt-img v-if="article.image" class="w-full rounded-l-3xl transition-all max-w-56" width="224" :src="article.image"
+                    :alt="article.title" />
                 <div class="flex flex-col justify-evenly px-6 py-3">
 
                     <h3 class="text-3xl">{{ article.title }}</h3>
@@ -32,15 +32,15 @@ const article = defineProps<Article>();
     inherits: false;
 }
 
-.glow {
+.shine {
     position: relative;
     z-index: 1;
     display: inline-block;
     width: 100%;
 }
 
-.glow::after,
-.glow::before {
+.shine::after,
+.shine::before {
     inset: -2px;
     content: '';
     position: absolute;
@@ -51,7 +51,7 @@ const article = defineProps<Article>();
     @apply rounded-3xl break-inside-avoid break-before-avoid break-after-avoid;
 }
 
-.glow::after {
+.shine::after {
     filter: blur(3rem);
 }
 

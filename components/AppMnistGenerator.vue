@@ -67,7 +67,7 @@ const generate = () => {
     </div>
     <div class="grid lg:grid-cols-4 lg:gap-14 gap-5 grid-cols-2">
         <div v-for="i in 8" :key="i" class="card">
-            <canvas ref="imgs" class="w-full"></canvas>
+            <canvas ref="imgs" class="w-full rounded-2xl shadow-2xl shadow-violet-800"></canvas>
         </div>
     </div>
 </div>

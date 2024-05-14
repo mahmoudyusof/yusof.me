@@ -3,23 +3,23 @@
         backdrop-brightness-110 backdrop-saturate-200 justify-between px-16 align-middle`">
         <div id="logo" class="flex gap-8 justify-center items-center">
             <nuxt-link to="/">
-                <img src="/logo.svg" alt="Nuxt Logo" width="90" height="60" />
+                <nuxt-img src="/logo.svg" alt="Nuxt Logo" width="90" height="60" />
             </nuxt-link>
         </div>
         <div class="flex items-center space-x-3">
-            <nuxt-link active-class="text-white" to="/">
+            <nuxt-link active-class="text-white" to="/" aria-label="Home">
                 <Icon name="uil:home-alt" size="25" />
             </nuxt-link>
-            <a target="_blank" href="https://twitter.com/mahmoudyusof">
+            <a target="_blank" href="https://twitter.com/mahmoudyusof" aria-label="twitter">
                 <Icon name="fa6-brands:x-twitter" size="25" />
             </a>
-            <a target="_blank" href="https://stackoverflow.com/users/9979796/mahmoud-youssef">
+            <a target="_blank" href="https://stackoverflow.com/users/9979796/mahmoud-youssef" aria-label="stackoverflow">
                 <Icon name="fa6-brands:stack-overflow" size="25" />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/mahmoud-yusof-a39ab5151/">
+            <a target="_blank" href="https://www.linkedin.com/in/mahmoud-yusof-a39ab5151/" aria-label="linkedin">
                 <Icon name="fa6-brands:linkedin-in" size="25" />
             </a>
-            <a target="_blank" href="mailto:mahmoud.yusof27@gmail.com">
+            <a target="_blank" href="mailto:mahmoud.yusof27@gmail.com" aria-label="mail">
                 <Icon name="fa:envelope-o" size="25" />
             </a>
         </div>
