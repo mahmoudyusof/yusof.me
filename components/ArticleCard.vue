@@ -3,10 +3,9 @@
         class="shine h-full bg-gray-800 group opacity-75 hover:opacity-100 hover:scale-105 transition-all relative rounded-3xl border border-slate-600">
         <nuxt-link :to="article.link" class="block h-full">
             <div class="bg-gray-800 rounded-3xl flex h-full">
-                <nuxt-img v-if="article.image" class="w-full rounded-l-3xl transition-all max-w-56" width="224" :src="article.image"
+                <nuxt-img v-if="article.image" class="w-full object-cover rounded-l-3xl transition-all max-w-56" quality="20" width="224" height="224" :src="article.image"
                     :alt="article.title" />
                 <div class="flex flex-col justify-evenly px-6 py-3">
-
                     <h3 class="text-3xl">{{ article.title }}</h3>
                     <p class="">{{ article.description }}</p>
                 </div>

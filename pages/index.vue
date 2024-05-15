@@ -100,11 +100,14 @@ useHead({
     position: absolute;
     inset: -2px;
     background: conic-gradient(from var(--gradient-angle),
-    theme('colors.violet.400'),
-    theme('colors.gray.200'),
-    theme('colors.teal.500'),
-    theme('colors.gray.200'),
-    theme('colors.violet.400'));
+        theme('colors.violet.400'),
+        theme('colors.gray.200'),
+        transparent,
+        theme('colors.teal.500'),
+        theme('colors.gray.200'),
+        transparent,
+        transparent,
+        theme('colors.violet.400'));
     animation: linear infinite 7s rotation-opace;
     z-index: -1;
     border-radius: inherit;

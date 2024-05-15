@@ -42,11 +42,11 @@ body {
     background-image: 
         linear-gradient(45deg ,
             transparent 0,
-            transparent 30%,
-            theme('colors.violet.950') 40%,
-            transparent 50%,
-            theme('colors.violet.950') 80%,
-            transparent 90%,
+            transparent 25%,
+            theme('colors.violet.950') 35%,
+            transparent 45%,
+            theme('colors.violet.950') 75%,
+            transparent 85%,
             transparent 100%);
     background-size: 100%;
     background-attachment: fixed;
