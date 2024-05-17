@@ -41,8 +41,9 @@ useHead({
 
     <section class="mt-10">
         <h2 class="mb-10 text-center text-4xl">Projects</h2>
-        <div class="container mx-auto">
-            <nuxt-link to="/projects/mnistGenerator">Mnist Generator</nuxt-link>
+        <div class="container mx-auto grid grid-cols-2 gap-5">
+            <ArticleCard link="/projects/mnist-generator" title="MNIST Generator" description="Generate MNIST digits using a GAN model" image="/mnist.png" />
+            <ArticleCard link="/projects/sorting-visualizer" title="Sorting Visualizer" description="Visualize sorting algorithms in action" image="/sorting.png" />
         </div>
 
     </section>

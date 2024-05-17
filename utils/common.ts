@@ -5,8 +5,8 @@ export enum State {
     pivot = 3
 }
 
-export const sleep = async (ms: number) => {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+export const sleep = async (s: number) => {
+    return new Promise((resolve) => setTimeout(resolve, s * 1000));
 }
 
 export const swap = (arr: Ref<number[]>, i: number, j: number) => {

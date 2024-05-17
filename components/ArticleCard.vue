@@ -43,7 +43,7 @@ const article = defineProps<Article>();
     inset: -2px;
     content: '';
     position: absolute;
-    background: conic-gradient(from var(--gradient-angle), transparent 0%, theme('colors.violet.400') 1%, transparent 10%, transparent 19%, theme('colors.violet.400') 20%, transparent 30%);
+    background: conic-gradient(from var(--gradient-angle), transparent 0%, theme('colors.gray.100') 1%, transparent 10%, transparent 19%, theme('colors.gray.100') 20%, transparent 30%);
     animation: linear infinite 7s rotation;
     break-inside: avoid;
     z-index: -1;

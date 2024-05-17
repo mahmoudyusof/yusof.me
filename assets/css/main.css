@@ -43,9 +43,9 @@ body {
         linear-gradient(45deg ,
             transparent 0,
             transparent 25%,
-            theme('colors.violet.950') 35%,
+            theme('colors.gray.700') 35%,
             transparent 45%,
-            theme('colors.violet.950') 75%,
+            theme('colors.gray.700') 75%,
             transparent 85%,
             transparent 100%);
     background-size: 100%;

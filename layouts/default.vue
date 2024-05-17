@@ -13,7 +13,8 @@
             <a target="_blank" href="https://twitter.com/mahmoudyusof" aria-label="twitter">
                 <Icon name="fa6-brands:x-twitter" size="25" />
             </a>
-            <a target="_blank" href="https://stackoverflow.com/users/9979796/mahmoud-youssef" aria-label="stackoverflow">
+            <a target="_blank" href="https://stackoverflow.com/users/9979796/mahmoud-youssef"
+                aria-label="stackoverflow">
                 <Icon name="fa6-brands:stack-overflow" size="25" />
             </a>
             <a target="_blank" href="https://www.linkedin.com/in/mahmoud-yusof-a39ab5151/" aria-label="linkedin">
@@ -27,45 +28,24 @@
     <div class="pt-16">
         <slot />
     </div>
-    <footer class="bg-black text-white">
-        <div class="container mx-auto py-8">
-            <div class="grid grid-cols-3">
-                <div class="mb-5">
-                    <p class="text-sm text-gray-400 mb-5">Social Media</p>
-                    <div class="flex flex-col space-y-5">
-                        <a class="text-gray-400 hover:text-white transition-colors" target="_blank"
-                            href="https://twitter.com/mahmoudyusof">
-                            <Icon name="fa6-brands:x-twitter" class="mr-2" size="25" />
-                            @mahmoudyusof
-                        </a>
-                        <a class="text-gray-400 hover:text-white transition-colors" target="_blank"
-                            href="https://stackoverflow.com/users/9979796/mahmoud-youssef">
-                            <Icon name="mdi:stack-overflow" class="mr-2" size="25" />
-                            mahmoud-youssef
-                        </a>
-                        <a class="text-gray-400 hover:text-white transition-colors" target="_blank"
-                            href="https://www.linkedin.com/in/mahmoud-yusof-a39ab5151/">
-                            <Icon name="fa6-brands:linkedin-in" class="mr-2" size="25" />
-                            mahmoud-yusof
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm text-gray-400 mb-5">Contact Me</p>
-                    <div class="flex flex-col space-y-5">
-                        <a class="text-gray-400 hover:text-white transition-colors"
-                            href="mailto:mahmoud.yusof27@gmail.com">
-                            <Icon name="fa:envelope-o" class="mr-2" size="25" />
-                            mahmoud.yusof27@gmail.com
-                        </a>
-                        <a @click.prevent class="text-gray-400 hover:text-white transition-colors" href="#">
-                            <Icon name="mdi:phone" class="mr-2" size="25" />
-                            +20 111 601 0514
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <p class="">&copy; 2024 Designed and Created by ... well, you can guess</p>
+    <footer class="bg-black py-8 mt-5 gap-4 text-white flex flex-col justify-center items-center">
+        <p class="">&copy; 2024 Designed and Created by ... well, you can guess</p>
+        <div class="space-x-2">
+            <a class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter @mahmoudyusof" target="_blank"
+                href="https://twitter.com/mahmoudyusof">
+                <Icon name="fa6-brands:x-twitter" class="mr-2" size="25" />
+            </a>
+            <a class="text-gray-400 hover:text-white transition-colors" aria-label="Stackoverflow 9979796/mahmoud-youssef" target="_blank"
+                href="https://stackoverflow.com/users/9979796/mahmoud-youssef">
+                <Icon name="mdi:stack-overflow" class="mr-2" size="25" />
+            </a>
+            <a class="text-gray-400 hover:text-white transition-colors" aria-label="Linkedin mahmoud-yusof-a39ab5151" target="_blank"
+                href="https://www.linkedin.com/in/mahmoud-yusof-a39ab5151/">
+                <Icon name="fa6-brands:linkedin-in" class="mr-2" size="25" />
+            </a>
+            <a class="text-gray-400 hover:text-white transition-colors" aria-label="email mahmoud.yusof27@gmail.com" href="mailto:mahmoud.yusof27@gmail.com">
+                <Icon name="fa:envelope-o" class="mr-2" size="25" />
+            </a>
         </div>
     </footer>
 </template>
