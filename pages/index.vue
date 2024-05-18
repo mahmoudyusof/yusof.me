@@ -1,5 +1,6 @@
 <script setup lang="ts">
 useHead({
+    title: "Welcome",
     meta: [
         {
             name: 'description',
@@ -9,27 +10,52 @@ useHead({
 })
 </script>
 <template>
-    <section id="hero" class="container mx-auto mt-24 flex flex-col justify-center items-center">
-        <div class="img-container">
-            <nuxt-img src="/logo.svg" alt="Mahmoud Youssef" width="300" height="200" class="my-10 fade-down" />
+    <section id="hero" class="grid items-center h-screen">
+        <div class="container mx-auto flex flex-col justify-center items-center">
+            <span class="glow rounded-full bg-slate-500 px-5 py-1 text-sm">Version 2.0</span>
+            <div class="img-container">
+                <nuxt-img src="/logo.svg" alt="Mahmoud Youssef" width="300" height="200" class="my-10 fade-down" />
+            </div>
+            <h1 class="text-6xl font-bold text-center fade-down" style="animation-delay: 0.1s;">Congratulations, You Found
+                It!</h1>
+            <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
+                officially yours. Use it wisely</p>
+            <div class="space-x-3 mt-10 fade-down" style="animation-delay: 0.3s;">
+                <a href="#projects"
+                    class="bg-slate-600 group transition-all text-white px-5 py-3 outline outline-2 outline-offset-1 outline-cyan-300 rounded-full hover:py-5 focus:py-5">
+                    <Icon name="mdi:code-tags" size="25" />
+                    Check Projects
+                </a>
+                <a href="#blog"
+                    class="glow mt-10 bg-slate-600 group transition-all text-white px-5 py-3 rounded-full hover:py-5 focus:py-5">
+                    <Icon name="mdi:document" size="25" />
+                    Read Blog
+                </a>
+            </div>
         </div>
-        <h1 class="text-6xl font-bold text-center fade-down" style="animation-delay: 0.1s;">Congratulations, You Found
-            It!</h1>
-        <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
-            officially yours. Use it wisely</p>
     </section>
-    <section class="container p-10 flex flex-col xl:w-1/2 lg:w-3/4 mx-auto rounded-2xl my-36 glow bg-slate-800">
-        <h2 class="mb-6">Mahmoud Youssef</h2>
-        <p class="text-lg">A junior software engineer trying to build stuff and write about them.</p>
-        <p class="text-lg">Check out some of the articles I wrote in below <Icon name="mdi:hand-pointing-down" size="25" /></p>
-        <p class="text-lg">You don't care but I'll write it anyways (cuz it's MY website). I like poetry<Icon name="mdi:feather" size="25" class="text-emerald-500" />,
-            Vollyball <Icon name="mdi:volleyball" class="text-blue-500" size="25" />
-            and maybe some leetcode <Icon name="cib:leetcode" class="text-yellow-500" size="25" />.
-        </p>
-        <p class="text-lg mt-5 border-l-4 border-slate-500 pl-3 text-gray-400">I also write <strong>poetry</strong> <Icon name="mdi:feather" class="text-emerald-500" size="25" /> and might dedicate a part of this website just for it (stay tuned)</p>
+    <section id="about">
+        <div class="container p-10 flex flex-col xl:w-1/2 lg:w-3/4 mx-auto rounded-2xl mb-36 ">
+            <h2 class="mb-6">Mahmoud Youssef</h2>
+            <p class="text-lg">A junior software engineer trying to build stuff and write about them.</p>
+            <p class="text-lg">Check out some of the articles I wrote in below
+                <Icon name="mdi:hand-pointing-down" size="25" />
+            </p>
+            <p class="text-lg">You don't care but I'll write it anyways (cuz it's MY website). I like poetry
+                <Icon name="mdi:feather" size="25" class="text-emerald-500" />,
+                Vollyball
+                <Icon name="mdi:volleyball" class="text-blue-500" size="25" />
+                and maybe some leetcode
+                <Icon name="cib:leetcode" class="text-yellow-500" size="25" />.
+            </p>
+            <p class="text-lg mt-5 border-l-4 border-slate-100 pl-3 text-gray-100">I also write <strong>poetry</strong>
+                <Icon name="mdi:feather" class="text-emerald-500" size="25" /> and might dedicate a part of this website
+                just for it (stay tuned)
+            </p>
+        </div>
     </section>
     <section class="pb-10 mt-10">
-        <h2 class="mb-10 text-center text-4xl">Blog Posts</h2>
+        <h2 class="mb-10 text-center text-4xl" id="blog">Blog Posts</h2>
         <div class="container mx-auto card-container">
             <ContentList v-slot="{ list }" path="/blog">
                 <ArticleCard v-for="article of list" :key="article._path" :link="article._path" :title="article.title"
@@ -40,10 +66,12 @@ useHead({
     </section>
 
     <section class="mt-10">
-        <h2 class="mb-10 text-center text-4xl">Projects</h2>
+        <h2 class="mb-10 text-center text-4xl" id="projects">Projects</h2>
         <div class="container mx-auto grid grid-cols-2 gap-5">
-            <ArticleCard link="/projects/mnist-generator" title="MNIST Generator" description="Generate MNIST digits using a GAN model" image="/mnist.png" />
-            <ArticleCard link="/projects/sorting-visualizer" title="Sorting Visualizer" description="Visualize sorting algorithms in action" image="/sorting.png" />
+            <ArticleCard link="/projects/mnist-generator" title="MNIST Generator"
+                description="Generate MNIST digits using a GAN model" image="/mnist.png" />
+            <ArticleCard link="/projects/sorting-visualizer" title="Sorting Visualizer"
+                description="Visualize sorting algorithms in action" image="/sorting.png" />
         </div>
 
     </section>
@@ -86,29 +114,72 @@ useHead({
     content: '';
     position: absolute;
     inset: 5px;
-    /* background: linear-gradient(120deg, theme('colors.blue.700') 0%, theme('colors.violet.700') 100%); */
+    /* background: linear-gradient(120deg, theme('colors.blue.700') 0%, theme('colors.cyan.700') 100%); */
     background-color: white;
     border-radius: 50%;
     opacity: 0.3;
     filter: blur(5rem);
 }
+#about {
+    position: relative;
+}
+#about::before, #about::after {
+    content: '';
+    opacity: 0.8;
+    /* @apply backdrop-blur-3xl backdrop-brightness-110 backdrop-saturate-200; */
+    position: absolute;
+    inset: -50px 0;
+    z-index: -1;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6)) blur(0.1rem);
+}
 
+#about::before {
+    --initialY: -80px;
+    --finalY: 80px;
+    --skew-deg: -4deg;
+    transform: translateY(var(--initialY)) skewY(var(--skew-deg));
+    background: linear-gradient(-120deg, theme('colors.sky.600'), theme('colors.indigo.700'), theme('colors.purple.800'));
+    animation: linear paralax forwards;
+    animation-timeline: view();
+}
+
+#about::after {
+    --initialY: 80px;
+    --finalY: -80px;
+    --skew-deg: 3deg;
+    background: linear-gradient(120deg, theme('colors.sky.600'), theme('colors.indigo.500'), theme('colors.purple.400'));
+    transform: translateY(var(--initialY)) skewY(var(--skew-deg));
+    animation: linear paralax forwards;
+    animation-timeline: view();
+}
+
+@keyframes paralax {
+    0% {
+        transform: translateY(var(--initialY)) skewY(var(--skew-deg));
+    }
+
+    100% {
+        transform: translateY(var(--finalY)) skewY(var(--skew-deg));
+    }
+}
 .glow {
     position: relative;
 }
-.glow::after, .glow::before {
+
+.glow::after,
+.glow::before {
     content: '';
     position: absolute;
     inset: -2px;
     background: conic-gradient(from var(--gradient-angle),
-        theme('colors.violet.400'),
-        theme('colors.gray.200'),
-        transparent,
-        theme('colors.teal.500'),
-        theme('colors.gray.200'),
-        transparent,
-        transparent,
-        theme('colors.violet.400'));
+            theme('colors.cyan.400'),
+            theme('colors.gray.200'),
+            transparent,
+            theme('colors.teal.500'),
+            theme('colors.gray.200'),
+            transparent,
+            transparent,
+            theme('colors.cyan.400'));
     animation: linear infinite 7s rotation-opace;
     z-index: -1;
     border-radius: inherit;

@@ -39,7 +39,7 @@
 }
 
 body {
-    background-image: 
+    /* background-image: 
         linear-gradient(45deg ,
             transparent 0,
             transparent 25%,
@@ -47,14 +47,50 @@ body {
             transparent 45%,
             theme('colors.gray.700') 75%,
             transparent 85%,
-            transparent 100%);
-    background-size: 100%;
+            transparent 100%); */
+    /* background-size: 100%;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     color: theme('colors.gray.100');
-    background-color: theme('colors.gray.900');
+    background-color: theme('colors.gray.800');
     
+}
+
+body::after, body::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    width: 0;
+    height: 9rem;
+    filter: blur(9rem);
+    border-radius: 50%;
+    animation: grow 1s 1s forwards;
+}
+
+body::after {
+    background: linear-gradient(to bottom, transparent, theme('colors.cyan.400'), transparent);
+    transform-origin: top left;
+    transform: rotateZ(60deg);
+    left: 150px;
+}
+
+
+body::before {
+    background: linear-gradient(to bottom, transparent, theme('colors.emerald.300'), transparent);
+    transform-origin: top right;
+    transform: rotateZ(-60deg);
+    right: 150px;
+}
+
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
 }
 html {
     scroll-behavior: smooth;
+    color-scheme: dark light;
 }
