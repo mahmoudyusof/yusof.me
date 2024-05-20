@@ -1,8 +1,6 @@
 <template>
     <div>
-        <Suspense>
-            <AppMnistGenerator />
-        </Suspense>
+        <LazyAppMnistGenerator />
     </div>
 </template>
 

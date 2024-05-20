@@ -65,6 +65,7 @@ body::after, body::before {
     filter: blur(9rem);
     border-radius: 50%;
     animation: grow 1s 1s forwards;
+    z-index: 1;
 }
 
 body::after {
@@ -76,7 +77,7 @@ body::after {
 
 
 body::before {
-    background: linear-gradient(to bottom, transparent, theme('colors.emerald.300'), transparent);
+    background: linear-gradient(to bottom, transparent, theme('colors.indigo.300'), transparent);
     transform-origin: top right;
     transform: rotateZ(-60deg);
     right: 150px;
@@ -89,6 +90,10 @@ body::before {
     100% {
         width: 50%;
     }
+}
+
+body * {
+    z-index: 2;
 }
 html {
     scroll-behavior: smooth;

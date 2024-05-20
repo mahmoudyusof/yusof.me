@@ -10,24 +10,28 @@ useHead({
 })
 </script>
 <template>
-    <section id="hero" class="grid items-center h-screen">
-        <div class="container mx-auto flex flex-col justify-center items-center">
-            <span class="glow rounded-full bg-slate-500 px-5 py-1 text-sm">Version 2.0</span>
-            <div class="img-container">
-                <nuxt-img src="/logo.svg" alt="Mahmoud Youssef" width="300" height="200" class="my-10 fade-down" />
-            </div>
-            <h1 class="text-6xl font-bold text-center fade-down" style="animation-delay: 0.1s;">Congratulations, You Found
-                It!</h1>
-            <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
-                officially yours. Use it wisely</p>
+    <section id="hero" class="pt-56 h-screen">
+        <div class="container mx-auto flex flex-col space-y-20 justify-center items-center">
+            <span class="fade-down">
+                <span class="glow rounded-full bg-slate-800 px-5 py-1 text-sm">
+                    Version 2.0
+                </span>
+            </span>
+            <span>
+                <h1 class="text-6xl font-bold text-center fade-down" style="animation-delay: 0.1s;">Congratulations, You
+                    Found
+                    It!</h1>
+                <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
+                    officially yours. Use it wisely</p>
+            </span>
             <div class="space-x-3 mt-10 fade-down" style="animation-delay: 0.3s;">
                 <a href="#projects"
-                    class="bg-slate-600 group transition-all text-white px-5 py-3 outline outline-2 outline-offset-1 outline-cyan-300 rounded-full hover:py-5 focus:py-5">
+                    class="bg-gradient-to-r from-indigo-500 to-indigo-800 group transition-all text-white px-5 py-3 rounded-full hover:py-5 focus:py-5">
                     <Icon name="mdi:code-tags" size="25" />
                     Check Projects
                 </a>
                 <a href="#blog"
-                    class="glow mt-10 bg-slate-600 group transition-all text-white px-5 py-3 rounded-full hover:py-5 focus:py-5">
+                    class="glow mt-10 bg-gradient-to-r from-slate-800 to-sky-900 group transition-all text-white px-5 py-3 rounded-full hover:py-5 focus:py-5">
                     <Icon name="mdi:document" size="25" />
                     Read Blog
                 </a>
@@ -42,14 +46,14 @@ useHead({
                 <Icon name="mdi:hand-pointing-down" size="25" />
             </p>
             <p class="text-lg">You don't care but I'll write it anyways (cuz it's MY website). I like poetry
-                <Icon name="mdi:feather" size="25" class="text-emerald-500" />,
+                <Icon name="mdi:feather" size="25" class="text-indigo-500" />,
                 Vollyball
-                <Icon name="mdi:volleyball" class="text-blue-500" size="25" />
+                <Icon name="mdi:volleyball" class="text-stone-200" size="25" />
                 and maybe some leetcode
                 <Icon name="cib:leetcode" class="text-yellow-500" size="25" />.
             </p>
             <p class="text-lg mt-5 border-l-4 border-slate-100 pl-3 text-gray-100">I also write <strong>poetry</strong>
-                <Icon name="mdi:feather" class="text-emerald-500" size="25" /> and might dedicate a part of this website
+                <Icon name="mdi:feather" class="text-indigo-500" size="25" /> and might dedicate a part of this website
                 just for it (stay tuned)
             </p>
         </div>
@@ -59,7 +63,7 @@ useHead({
         <div class="container mx-auto card-container">
             <ContentList v-slot="{ list }" path="/blog">
                 <ArticleCard v-for="article of list" :key="article._path" :link="article._path" :title="article.title"
-                    :description="article.description" :image="article.image">
+                    :description="article.description" :image="article.image" :date="article.date">
                 </ArticleCard>
             </ContentList>
         </div>
@@ -120,10 +124,13 @@ useHead({
     opacity: 0.3;
     filter: blur(5rem);
 }
+
 #about {
     position: relative;
 }
-#about::before, #about::after {
+
+#about::before,
+#about::after {
     content: '';
     opacity: 0.8;
     /* @apply backdrop-blur-3xl backdrop-brightness-110 backdrop-saturate-200; */
@@ -162,6 +169,7 @@ useHead({
         transform: translateY(var(--finalY)) skewY(var(--skew-deg));
     }
 }
+
 .glow {
     position: relative;
 }
@@ -172,14 +180,14 @@ useHead({
     position: absolute;
     inset: -2px;
     background: conic-gradient(from var(--gradient-angle),
-            theme('colors.cyan.400'),
-            theme('colors.gray.200'),
+            theme('colors.purple.800'),
+            theme('colors.sky.500'),
             transparent,
-            theme('colors.teal.500'),
-            theme('colors.gray.200'),
+            theme('colors.teal.800'),
+            theme('colors.sky.500'),
             transparent,
             transparent,
-            theme('colors.cyan.400'));
+            theme('colors.purple.800'));
     animation: linear infinite 7s rotation-opace;
     z-index: -1;
     border-radius: inherit;

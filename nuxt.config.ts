@@ -21,10 +21,13 @@ export default defineNuxtConfig({
   },
 
   content: {
+    navigation: {
+      fields: ['date']
+    },
     highlight: {
       langs: ['javascript', 'python', 'shell', 'typescript', 'json', 'yaml', 'css', 'html', 'markdown', 'bash', 'dockerfile'],
       theme: {
-        default: "one-dark-pro",
+        default: "material-theme-palenight",
         dark: "github-dark",
       },
     }

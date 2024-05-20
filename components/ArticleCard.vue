@@ -7,7 +7,8 @@
                     :alt="article.title" />
                 <div class="flex flex-col justify-evenly px-6 py-3">
                     <h3 class="text-3xl">{{ article.title }}</h3>
-                    <p class="">{{ article.description }}</p>
+                    <p>{{ article.description }}</p>
+                    <p v-if="date" class="text-sm text-gray-400">{{ new Date(date).toDateString() }}</p>
                 </div>
             </div>
         </nuxt-link>
@@ -19,7 +20,8 @@ type Article = {
     title: string,
     description: string,
     image?: string,
-    link: string
+    link: string,
+    date?: string
 }
 const article = defineProps<Article>();
 </script>

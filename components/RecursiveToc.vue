@@ -1,8 +1,9 @@
 <template>
     <ul>
         <li v-for="link in links" :key="link.id">
-        <nuxt-link active-class="text-white" class="hover:underline text-slate-200 hover:text-white" :href="`#${link.id}`">{{ link.text }}</nuxt-link>
-        <RecursiveToc v-if="link.children" :links="link.children" />
+            <nuxt-link active-class="text-white" class="hover:underline text-slate-200 hover:text-white"
+                :href="`#${link.id}`">{{ link.text }}</nuxt-link>
+            <RecursiveToc v-if="link.children" :links="link.children" />
         </li>
     </ul>
 </template>
@@ -14,6 +15,6 @@ type Link = {
     depth: number,
     children?: Link[]
 }
-const {links} = defineProps<{ links: Link[]}>();
+const { links } = defineProps<{ links: Link[] }>();
 
 </script>

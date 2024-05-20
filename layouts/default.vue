@@ -3,7 +3,7 @@
         backdrop-brightness-110 backdrop-saturate-200 justify-between px-16 align-middle`">
         <div id="logo" class="flex gap-8 justify-center items-center">
             <nuxt-link to="/">
-                <nuxt-img src="/logo.svg" alt="Nuxt Logo" width="90" height="60" />
+                <nuxt-img src="/logo-thin.svg" alt="Nuxt Logo" width="90" height="60" />
             </nuxt-link>
         </div>
         <div class="flex items-center space-x-3">
