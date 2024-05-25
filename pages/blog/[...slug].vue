@@ -5,7 +5,7 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg',
-      href: 'http://localhost:3000/favicon.svg'
+      href: '/favicon.svg'
     }
   ]
 })
