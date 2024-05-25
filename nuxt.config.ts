@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  experimental: {
+    typedPages: true,
+  },
   app: {
     head: {
       titleTemplate: 'MJ Blog | %s',
@@ -27,7 +30,7 @@ export default defineNuxtConfig({
     highlight: {
       langs: ['javascript', 'python', 'shell', 'typescript', 'json', 'yaml', 'css', 'html', 'markdown', 'bash', 'dockerfile'],
       theme: {
-        default: "material-theme-palenight",
+        default: "dark-plus",
         dark: "github-dark",
       },
     }

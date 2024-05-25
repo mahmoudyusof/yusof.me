@@ -8,6 +8,16 @@ useHead({
         }
     ],
 })
+
+const articles = await queryContent('/blog')
+    .only(['title', 'description', '_path', 'date'])
+    .find()
+    .then(result => {
+        return (result as Array<{title: string, description: string, _path: string, date: string}>)
+        .sort((a, b) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime()
+        })
+    })
 </script>
 <template>
     <section id="hero" class="pt-56 h-screen">
@@ -21,7 +31,8 @@ useHead({
                 <h1 class="text-6xl font-bold text-center fade-down" style="animation-delay: 0.1s;">Congratulations, You
                     Found
                     It!</h1>
-                <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here is
+                <p class="text-center text-2xl mt-4 fade-down" style="animation-delay: 0.2s;">All of the treasure here
+                    is
                     officially yours. Use it wisely</p>
             </span>
             <div class="space-x-3 mt-10 fade-down" style="animation-delay: 0.3s;">
@@ -60,12 +71,21 @@ useHead({
     </section>
     <section class="pb-10 mt-10">
         <h2 class="mb-10 text-center text-4xl" id="blog">Blog Posts</h2>
-        <div class="container mx-auto card-container">
-            <ContentList v-slot="{ list }" path="/blog">
+        <div class="container mx-auto xl:w-1/2 lg:w-3/5 space-y-5">
+            <!-- <ContentList v-slot="{ list }" path="/blog">
                 <ArticleCard v-for="article of list" :key="article._path" :link="article._path" :title="article.title"
                     :description="article.description" :image="article.image" :date="article.date">
                 </ArticleCard>
-            </ContentList>
+            </ContentList> -->
+
+            <nuxt-link v-for="article in articles" :key="article._path" :to="article._path"
+                class="grid grid-cols-12 grid-rows-2 items-center gap-x-8 p-5 clickable border-b-2 border-white">
+                <h3 class="col-span-10 row-span-1">{{ article.title }}</h3>
+                <p class="col-span-10 row-span-1">{{ article.description }}</p>
+                <p class="row-start-1 row-end-3 col-start-11 col-end-13 self-center border-l-2 border-white pl-5">
+                    {{ new Date(article.date).toDateString() }}
+                </p>
+            </nuxt-link>
         </div>
     </section>
 
@@ -81,9 +101,6 @@ useHead({
     </section>
 </template>
 
-<script setup>
-
-</script>
 <style>
 @keyframes fadeDown {
     0% {
@@ -95,6 +112,27 @@ useHead({
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.clickable {
+    position: relative;
+}
+
+.clickable::before {
+    content: '';
+    position: absolute;
+    transform-origin: top left;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+    right: 100%;
+    background: linear-gradient(to right, theme('colors.sky.700'), theme('colors.slate.900')) /*#2225*/;
+    transition: all 0.3s ease-in-out;
+}
+
+.clickable:hover::before {
+    right: 0;
 }
 
 .fade-down {

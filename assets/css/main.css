@@ -27,11 +27,11 @@
     }
 
     ul {
-        @apply list-disc list-inside ml-6;
+        @apply list-inside ml-6;
     }
-    ul ul{
+    /* ul ul{
         list-style-type: square;
-    }
+    } */
     li {
         @apply my-1;
     }
@@ -39,21 +39,8 @@
 }
 
 body {
-    /* background-image: 
-        linear-gradient(45deg ,
-            transparent 0,
-            transparent 25%,
-            theme('colors.gray.700') 35%,
-            transparent 45%,
-            theme('colors.gray.700') 75%,
-            transparent 85%,
-            transparent 100%); */
-    /* background-size: 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat; */
     color: theme('colors.gray.100');
     background-color: theme('colors.gray.800');
-    
 }
 
 body::after, body::before {
