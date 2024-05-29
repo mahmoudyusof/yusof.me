@@ -18,7 +18,7 @@ defineOgImageComponent('pergel', {
   <div id="article" class="container mx-auto my-10 grid grid-cols-5 gap-4">
     <ContentDoc v-slot="{ doc }">
       <article class="bg-slate-900 p-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-4 col-span-5">
-        <ContentRenderer :value="doc" />
+        <ContentRenderer :components="{}" :value="doc" />
       </article>
       <div class="bg-slate-900 py-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-1 lg:block hidden">
         <span class="sticky top-24">
@@ -30,19 +30,6 @@ defineOgImageComponent('pergel', {
 </template>
 
 <style>
-#article code,
-#article pre {
-  @apply bg-zinc-900 text-white p-1 rounded-xl px-5 text-wrap break-words;
-}
-
-#article pre {
-  @apply border border-zinc-600;
-}
-
-#article code {
-  @apply inline;
-}
-
 #article p {
   @apply my-4 text-lg;
 }
