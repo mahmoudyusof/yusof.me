@@ -11,13 +11,9 @@ useHead({
 
 const articles = await queryContent('/blog')
     .only(['title', 'description', '_path', 'date'])
+    .sort({ date: -1 })
+    .limit(5)
     .find()
-    .then(result => {
-        return (result as Array<{title: string, description: string, _path: string, date: string}>)
-        .sort((a, b) => {
-            return new Date(b.date).getTime() - new Date(a.date).getTime()
-        })
-    })
 </script>
 <template>
     <section id="hero" class="pt-56 h-screen">
@@ -71,7 +67,7 @@ const articles = await queryContent('/blog')
     </section>
     <section class="pb-10 mt-10">
         <h2 class="mb-10 text-center text-4xl" id="blog">Blog Posts</h2>
-        <div class="container mx-auto xl:w-1/2 lg:w-3/5 space-y-5">
+        <div class="container mx-auto xl:w-1/2 lg:w-3/5 divide-y-2">
             <!-- <ContentList v-slot="{ list }" path="/blog">
                 <ArticleCard v-for="article of list" :key="article._path" :link="article._path" :title="article.title"
                     :description="article.description" :image="article.image" :date="article.date">
@@ -79,7 +75,7 @@ const articles = await queryContent('/blog')
             </ContentList> -->
 
             <nuxt-link v-for="article in articles" :key="article._path" :to="article._path"
-                class="grid grid-cols-12 grid-rows-2 items-center gap-x-8 p-5 clickable border-b-2 border-white">
+                class="grid grid-cols-12 grid-rows-2 items-center gap-x-8 p-5 clickable">
                 <h3 class="col-span-10 row-span-1">{{ article.title }}</h3>
                 <p class="col-span-10 row-span-1">{{ article.description }}</p>
                 <p class="row-start-1 row-end-3 col-start-11 col-end-13 self-center border-l-2 border-white pl-5">
@@ -118,21 +114,32 @@ const articles = await queryContent('/blog')
     position: relative;
 }
 
-.clickable::before {
+.clickable::before, .clickable::after {
     content: '';
     position: absolute;
     transform-origin: top left;
     top: 0;
     bottom: 0;
-    left: 0;
     border-radius: inherit;
-    right: 100%;
-    background: linear-gradient(to right, theme('colors.sky.700'), theme('colors.slate.900')) /*#2225*/;
+    opacity: 0;
     transition: all 0.3s ease-in-out;
 }
 
-.clickable:hover::before {
+.clickable::before {
+    right: 80%;
+    left: 0;
+    background: linear-gradient(to right, theme('colors.violet.800'), transparent) /*#2225*/;
+}
+
+.clickable::after {
+    left: 80%;
     right: 0;
+    background: linear-gradient(to left, theme('colors.violet.800'), transparent) /*#2225*/;
+}
+
+.clickable:hover::before, .clickable:hover::after,
+.clickable:focus::before, .clickable:focus::after {
+    opacity: 1;
 }
 
 .fade-down {
