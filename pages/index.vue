@@ -4,7 +4,7 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: 'This is where I share articles, projects and maybe poems.'
+            content: 'Mahmoud Youssef\'s personal website'
         }
     ],
 })
@@ -57,21 +57,21 @@ const articles = await queryContent('/blog')
                 <Icon name="mdi:hand-pointing-down" size="25" />
             </p>
             <p class="text-lg">You don't care but I'll write it anyways (cuz it's MY website). I like poetry
-                <Icon name="mdi:feather" size="25" class="text-slate-800" />,
+                <Icon name="mdi:feather" size="25" class="text-indigo-500" />,
                 Vollyball
-                <Icon name="mdi:volleyball" class="text-yellow-200" size="25" />
+                <Icon name="mdi:volleyball" class="text-stone-200" size="25" />
                 and maybe some leetcode
-                <Icon name="cib:leetcode" class="text-yellow-300" size="25" />.
+                <Icon name="cib:leetcode" class="text-yellow-500" size="25" />.
             </p>
             <p class="text-lg mt-5 border-l-4 border-slate-100 pl-3 text-gray-100">I also write <strong>poetry</strong>
-                <Icon name="mdi:feather" class="text-slate-800" size="25" /> and might dedicate a part of this website
+                <Icon name="mdi:feather" class="text-indigo-500" size="25" /> and might dedicate a part of this website
                 just for it (stay tuned)
             </p>
         </div>
     </section>
     <section class="pb-10 mt-10">
         <h2 class="mb-10 text-center text-4xl" id="blog">Blog Posts</h2>
-        <div class="container mx-auto xl:w-1/2 lg:w-3/5 divide-y divide-violet-500">
+        <div class="container mx-auto xl:w-1/2 lg:w-3/5 space-y-5">
             <!-- <ContentList v-slot="{ list }" path="/blog">
                 <ArticleCard v-for="article of list" :key="article._path" :link="article._path" :title="article.title"
                     :description="article.description" :image="article.image" :date="article.date">
@@ -79,7 +79,7 @@ const articles = await queryContent('/blog')
             </ContentList> -->
 
             <nuxt-link v-for="article in articles" :key="article._path" :to="article._path"
-                class="grid grid-cols-12 grid-rows-2 items-center gap-x-8 p-5 clickable">
+                class="grid grid-cols-12 grid-rows-2 items-center gap-x-8 p-5 clickable border-b-2 border-white">
                 <h3 class="col-span-10 row-span-1">{{ article.title }}</h3>
                 <p class="col-span-10 row-span-1">{{ article.description }}</p>
                 <p class="row-start-1 row-end-3 col-start-11 col-end-13 self-center border-l-2 border-white pl-5">
@@ -118,37 +118,21 @@ const articles = await queryContent('/blog')
     position: relative;
 }
 
-.clickable::after, .clickable::before {
+.clickable::before {
     content: '';
     position: absolute;
     transform-origin: top left;
     top: 0;
     bottom: 0;
+    left: 0;
     border-radius: inherit;
+    right: 100%;
+    background: linear-gradient(to right, theme('colors.sky.700'), theme('colors.slate.900')) /*#2225*/;
     transition: all 0.3s ease-in-out;
 }
 
-.clickable::before {
-    left: 0;
-    right: 100%;
-    background: linear-gradient(to right, theme('colors.violet.900'), transparent) /*#2225*/;
-}
-
-.clickable::after {
-    left: 100%;
-    border-radius: inherit;
+.clickable:hover::before {
     right: 0;
-    background: linear-gradient(to left, theme('colors.violet.900'), transparent) /*#2225*/;
-}
-
-
-
-.clickable:hover::before, .clickable:focus::before {
-    right: 70%;
-}
-
-.clickable:hover::after, .clickable:focus::after {
-    left: 70%;
 }
 
 .fade-down {

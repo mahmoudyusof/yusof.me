@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 useHead({
 
   link: [
@@ -9,20 +9,16 @@ useHead({
     }
   ]
 })
-
-defineOgImageComponent('pergel', {
-  headline: 'Welcome to my blog',
-})
 </script>
 <template>
   <div id="article" class="container mx-auto my-10 grid grid-cols-5 gap-4">
     <ContentDoc v-slot="{ doc }">
       <article class="bg-slate-900 p-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-4 col-span-5">
-        <ContentRenderer :components="{}" :value="doc" />
+        <ContentRenderer :value="doc" />
       </article>
       <div class="bg-slate-900 py-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-1 lg:block hidden">
         <span class="sticky top-24">
-          <RecursiveToc v-if="doc.body?.toc?.links" :links="doc.body?.toc?.links" />
+          <RecursiveToc v-if="doc.body.toc" :links="doc.body.toc.links" />
         </span>
       </div>
     </ContentDoc>
@@ -30,6 +26,15 @@ defineOgImageComponent('pergel', {
 </template>
 
 <style>
+#article code,
+#article pre {
+  @apply bg-zinc-900 text-white p-1 rounded px-5 text-wrap break-words;
+}
+
+#article code {
+  @apply inline;
+}
+
 #article p {
   @apply my-4 text-lg;
 }
