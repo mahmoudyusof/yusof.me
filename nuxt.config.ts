@@ -38,5 +38,11 @@ export default defineNuxtConfig({
   routeRules : {
     '/**':  {static: true},
   },
-  modules: ["@nuxt/content", 'nuxt-icon', "@nuxt/image"]
+  modules: [
+    "@nuxt/content",
+    'nuxt-icon',
+    "@nuxt/image",
+    '@nuxtjs/seo',
+    "nuxt-og-image"
+  ]
 })

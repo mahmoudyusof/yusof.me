@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 useHead({
 
   link: [
@@ -9,6 +9,10 @@ useHead({
     }
   ]
 })
+
+defineOgImageComponent('pergel', {
+  headline: 'Welcome to my blog',
+})
 </script>
 <template>
   <div id="article" class="container mx-auto my-10 grid grid-cols-5 gap-4">
@@ -18,7 +22,7 @@ useHead({
       </article>
       <div class="bg-slate-900 py-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-1 lg:block hidden">
         <span class="sticky top-24">
-          <RecursiveToc :links="doc.body.toc.links" />
+          <RecursiveToc v-if="doc.body?.toc?.links" :links="doc.body?.toc?.links" />
         </span>
       </div>
     </ContentDoc>
@@ -28,7 +32,11 @@ useHead({
 <style>
 #article code,
 #article pre {
-  @apply bg-zinc-900 text-white p-1 rounded px-5 text-wrap break-words;
+  @apply bg-zinc-900 text-white p-1 rounded-xl px-5 text-wrap break-words;
+}
+
+#article pre {
+  @apply border border-zinc-600;
 }
 
 #article code {

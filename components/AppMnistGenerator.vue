@@ -58,7 +58,7 @@ const generate = () => {
 <template>
 <div class="container mx-auto p-20">
     <div class="flex justify-evenly mb-10">
-        <button :disabled="loading" class="bg-cyan-700 hover:bg-cyan-950 px-5 py-3 rounded-3xl group text-white" @click.prevent="generate">
+        <button :disabled="loading" class="bg-violet-700 hover:bg-violet-950 px-5 py-3 rounded-3xl group text-white" @click.prevent="generate">
             <Icon :name="loading ? `mdi:loading` : `mdi:refresh`" :class="`group-hover:animate-spin ${loading ? 'animate-spin' : ''}`" size="25" />
             Generate
         </button>
