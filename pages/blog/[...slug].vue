@@ -1,27 +1,45 @@
 <script setup>
-useHead({
+const route = useRoute();
+const { data: page } = await useAsyncData('my-page', queryContent(route.fullPath).findOne)
 
+useHead({
   link: [
     {
       rel: 'icon',
       type: 'image/svg',
       href: '/favicon.svg'
     }
-  ]
+  ],
 })
+
+console.log(page.value.title)
+
+useSeoMeta({
+  ogTitle: page.value.title,
+  title: page.value.title,
+  twitterTitle: page.value.title,
+  description: page.value.description,
+  ogDescription: page.value.description,
+  twitterDescription: page.value.description,
+  ogImage: page.value.image,
+  twitterImage: page.value.image,
+  ogUrl: page.value.url,
+  twitterUrl: page.value.url,
+  ogType: page.value.type,
+  twitterCard: page.value.type,
+})
+
 </script>
 <template>
   <div id="article" class="container mx-auto my-10 grid grid-cols-5 gap-4">
-    <ContentDoc v-slot="{ doc }">
       <article class="bg-slate-900 p-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-4 col-span-5">
-        <ContentRenderer :value="doc" />
+        <ContentRenderer :value="page" />
       </article>
       <div class="bg-slate-900 py-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-1 lg:block hidden">
         <span class="sticky top-24">
-          <RecursiveToc v-if="doc.body?.toc" :links="doc.body.toc.links" />
+          <RecursiveToc v-if="page.body?.toc" :links="page.body.toc.links" />
         </span>
       </div>
-    </ContentDoc>
   </div>
 </template>
 
