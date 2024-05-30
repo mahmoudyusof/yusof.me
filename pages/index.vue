@@ -53,14 +53,14 @@ const articles = await queryContent('/blog')
                 <Icon name="mdi:hand-pointing-down" size="25" />
             </p>
             <p class="text-lg">You don't care but I'll write it anyways (cuz it's MY website). I like poetry
-                <Icon name="mdi:feather" size="25" class="text-indigo-500" />,
+                <Icon name="mdi:feather" size="25" class="text-zinc-800" />,
                 Vollyball
                 <Icon name="mdi:volleyball" class="text-stone-200" size="25" />
                 and maybe some leetcode
                 <Icon name="cib:leetcode" class="text-yellow-500" size="25" />.
             </p>
             <p class="text-lg mt-5 border-l-4 border-slate-100 pl-3 text-gray-100">I also write <strong>poetry</strong>
-                <Icon name="mdi:feather" class="text-indigo-500" size="25" /> and might dedicate a part of this website
+                <Icon name="mdi:feather" class="text-zinc-800" size="25" /> and might dedicate a part of this website
                 just for it (stay tuned)
             </p>
         </div>
