@@ -58,7 +58,7 @@ const generate = () => {
 <template>
 <div class="container mx-auto p-20">
     <div class="flex justify-evenly mb-10">
-        <button :disabled="loading" class="bg-cyan-700 hover:bg-cyan-950 px-5 py-3 rounded-3xl group text-white" @click.prevent="generate">
+        <button :disabled="loading" class="bg-violet-700 hover:bg-violet-950 px-5 py-3 rounded-3xl group text-white" @click.prevent="generate">
             <Icon :name="loading ? `mdi:loading` : `mdi:refresh`" :class="`group-hover:animate-spin ${loading ? 'animate-spin' : ''}`" size="25" />
             Generate
         </button>
@@ -67,7 +67,7 @@ const generate = () => {
     </div>
     <div class="grid lg:grid-cols-4 lg:gap-14 gap-5 grid-cols-2">
         <div v-for="i in 8" :key="i" class="card">
-            <canvas ref="imgs" class="w-full rounded-2xl shadow-2xl shadow-cyan-800"></canvas>
+            <canvas ref="imgs" class="w-full rounded-2xl shadow-2xl shadow-violet-800"></canvas>
         </div>
     </div>
 </div>

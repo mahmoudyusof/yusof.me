@@ -18,7 +18,7 @@ useHead({
       </article>
       <div class="bg-slate-900 py-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-1 lg:block hidden">
         <span class="sticky top-24">
-          <RecursiveToc :links="doc.body.toc.links" />
+          <RecursiveToc v-if="doc.body?.toc" :links="doc.body.toc.links" />
         </span>
       </div>
     </ContentDoc>
@@ -26,15 +26,6 @@ useHead({
 </template>
 
 <style>
-#article code,
-#article pre {
-  @apply bg-zinc-900 text-white p-1 rounded px-5 text-wrap break-words;
-}
-
-#article code {
-  @apply inline;
-}
-
 #article p {
   @apply my-4 text-lg;
 }

@@ -13,19 +13,19 @@
             </div>
         </div>
         <div class="flex justify-evenly">
-            <button class="bg-cyan-500 text-white rounded-xl px-5 py-2" @click="handleClickShuffle">
+            <button class="bg-violet-500 text-white rounded-xl px-5 py-2" @click="handleClickShuffle">
                 <Icon name="mdi:shuffle-variant" size="25" class="mr-2" />
                 Shuffle
             </button>
-            <button class="bg-cyan-500 text-white rounded-xl px-5 py-2" @click="() => sort('insertion')">
+            <button class="bg-violet-500 text-white rounded-xl px-5 py-2" @click="() => sort('insertion')">
                 <Icon name="mdi:set-split" size="25" class="mr-2" />
                 Insertion
             </button>
-            <button class="bg-cyan-500 text-white rounded-xl px-5 py-2" @click="() => sort('quick')">
+            <button class="bg-violet-500 text-white rounded-xl px-5 py-2" @click="() => sort('quick')">
                 <Icon name="mdi:speedometer" size="25" class="mr-2" />
                 Quick
             </button>
-            <button class="bg-cyan-500 text-white rounded-xl px-5 py-2" @click="() => sort('bubble')">
+            <button class="bg-violet-500 text-white rounded-xl px-5 py-2" @click="() => sort('bubble')">
                 <Icon name="mdi:chart-bubble" size="25" class="mr-2" />
                 Bubble
             </button>
