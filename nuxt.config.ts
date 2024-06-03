@@ -46,5 +46,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/seo",
     "nuxt-og-image"
-  ]
+  ],
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/blog']
+    }
+  }
 })

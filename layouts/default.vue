@@ -28,7 +28,7 @@
     <div class="pt-16">
         <slot />
     </div>
-    <footer class="bg-black py-8 mt-5 gap-4 text-white flex flex-col justify-center items-center">
+    <footer class="bg-black py-8 gap-4 text-white flex flex-col justify-center items-center">
         <p class="">&copy; 2024 Designed and Created by ... well, you can guess</p>
         <div class="space-x-2">
             <a class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter @mahmoudyusof" target="_blank"

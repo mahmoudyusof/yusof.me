@@ -40,11 +40,11 @@ const articles = await queryContent('/blog')
                     <Icon name="mdi:code-tags" size="25" />
                     Check Projects
                 </a>
-                <a href="#blog"
+                <nuxt-link to="/blog"
                     class="glow mt-10 bg-gradient-to-r from-slate-800 to-sky-900 group transition-all text-white px-5 py-3 rounded-full hover:py-5 focus:py-5">
                     <Icon name="mdi:document" size="25" />
                     Read Blog
-                </a>
+                </nuxt-link>
             </div>
         </div>
     </section>
