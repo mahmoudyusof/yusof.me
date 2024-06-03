@@ -9,6 +9,9 @@ useHead({
     ],
 })
 
+defineOgImageComponent('BlogPost', {
+    logo: '/MJLogo.svg'
+})
 const articles = await queryContent('/blog')
     .only(['title', 'description', '_path', 'date'])
     .sort({ date: -1 })

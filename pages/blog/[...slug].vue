@@ -12,7 +12,9 @@ useHead({
   ],
 })
 
-console.log(page.value.title)
+defineOgImageComponent('BlogPost', {
+  logo: '/MJLogo.svg'
+})
 
 useSeoMeta({
   ogTitle: page.value.title,
@@ -21,8 +23,8 @@ useSeoMeta({
   description: page.value.description,
   ogDescription: page.value.description,
   twitterDescription: page.value.description,
-  ogImage: page.value.image,
-  twitterImage: page.value.image,
+  // ogImage: page.value.image,
+  // twitterImage: page.value.image,
   ogUrl: page.value.url,
   twitterUrl: page.value.url,
   ogType: page.value.type,
