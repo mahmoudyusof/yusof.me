@@ -14,7 +14,7 @@ useHead({
 })
 
 defineOgImageComponent('BlogPost', {
-  logo: '/MJLogo.svg'
+  logo: '/logo-white.svg'
 })
 
 useSeoMeta({
