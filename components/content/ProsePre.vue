@@ -4,7 +4,7 @@
             <span>{{ $props.filename }}</span>
             <span>{{ $props.language }}</span>
         </div>
-        <pre :class="`p-5 ${$props.class}`"><slot /></pre>
+        <pre :class="`p-5 ${$props.class} text-wrap`"><slot /></pre>
     </div>
 </template>
 

@@ -53,6 +53,10 @@ useSeoMeta({
   @apply my-4 text-lg;
 }
 
+article {
+  font-size: 1.25rem;
+}
+
 #article hr {
   @apply my-8 rounded-full;
 }
@@ -81,6 +85,10 @@ article li a:hover {
   text-decoration: none;
 }
 
+
+#article :is(h1, h2, h3, h4, h5, h6) {
+  @apply font-bold my-5;
+}
 
 #article :is(h1, h2, h3, h4, h5, h6)::before {
   content: '#';

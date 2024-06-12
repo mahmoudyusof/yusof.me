@@ -13,7 +13,7 @@
         </span>
         <Teleport to="body">
             <Transition name="toast">
-                <div v-if="showToast" class="fixed top-28 left-5 text-violet-500 px-10 py-5 border border-violet-500 z-30 ">
+                <div v-if="showToast" class="fixed top-28 left-5 text-gray-50 px-10 py-5 bg-zinc-600 rounded-lg z-30 ">
                     <span>Copied to clipboard</span>
                 </div>
             </Transition>
@@ -64,6 +64,6 @@ const handleShare = () => {
 
 .toast-enter-from,
 .toast-leave-to {
-  left: -100%;
+  left: -50%;
 }
 </style>
