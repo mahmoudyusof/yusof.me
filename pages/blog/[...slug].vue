@@ -1,4 +1,5 @@
 <script setup>
+
 const route = useRoute();
 const { data: page } = await useAsyncData('my-page', queryContent(route.fullPath).findOne)
 
@@ -31,17 +32,19 @@ useSeoMeta({
   twitterCard: page.value.type,
 })
 
+
 </script>
 <template>
-  <div id="article" class="container mx-auto my-10 grid grid-cols-5 gap-4">
-      <article class="bg-slate-900 p-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-4 col-span-5">
-        <ContentRenderer :value="page" />
-      </article>
-      <div class="bg-slate-900 py-10 rounded-lg shadow-2xl shadow-gray-950 lg:col-span-1 lg:block hidden">
-        <span class="sticky top-24">
-          <RecursiveToc v-if="page.body?.toc" :links="page.body.toc.links" />
-        </span>
-      </div>
+  <div id="article" class=" border-gray-50 border-t border-b bg-zinc-950 grid grid-cols-5">
+    <ShareToSocial :title="page.title" :fullPath="route.fullPath"  />
+    <article class="p-10 lg:col-span-3 col-span-5">
+      <ContentRenderer :value="page" />
+    </article>
+    <div class="border-l border-double border-gray-300 pt-4 lg:col-span-1 lg:block hidden">
+      <span class="sticky top-28">
+        <RecursiveToc v-if="page.body?.toc" :links="page.body.toc.links" />
+      </span>
+    </div>
   </div>
 </template>
 
@@ -59,15 +62,21 @@ useSeoMeta({
 
 }
 
-#article blockquote > p {
+#article blockquote>p {
   font-size: inherit;
 }
 
-article p a, article li a{
+#article p>code {
+  @apply bg-zinc-600 italic text-white px-2 py-0.5 rounded;
+}
+
+article p a,
+article li a {
   @apply text-indigo-300 underline;
 }
 
-article p a:hover, article li a:hover{
+article p a:hover,
+article li a:hover {
   @apply text-indigo-500;
   text-decoration: none;
 }

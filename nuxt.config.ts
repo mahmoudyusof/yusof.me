@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       fields: ['date']
     },
     highlight: {
-      langs: ['javascript', 'python', 'shell', 'typescript', 'json', 'yaml', 'css', 'html', 'markdown', 'bash', 'dockerfile'],
+      langs: ['javascript', 'python', 'shell', 'typescript', 'json', 'yaml', 'css', 'html', 'markdown', 'bash', 'dockerfile', 'vue'],
       theme: {
         default: "dark-plus",
         dark: "github-dark",

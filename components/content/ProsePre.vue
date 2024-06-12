@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-zinc-900 border border-zinc-500 rounded-lg my-2">
-        <div v-if="$props.filename" class="flex justify-between rounded-t-lg bg-indigo-950 border-b-zinc-500 border-b p-3">
+    <div class="bg-zinc-900 border border-zinc-500 my-2">
+        <div v-if="$props.filename" class="flex justify-between rounded-t-lg bg-zinc-950 border-b-zinc-500 border-b p-3">
             <span>{{ $props.filename }}</span>
             <span>{{ $props.language }}</span>
         </div>

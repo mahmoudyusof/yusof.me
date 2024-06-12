@@ -1,9 +1,9 @@
 <template>
-    <nav :class="`bg-black/5 flex fixed top-0 py-2 left-0 w-full backdrop-blur-3xl z-50
+    <nav :class="`bg-white-500/50 flex fixed top-0 py-2 left-0 w-full backdrop-blur-3xl z-50
         backdrop-brightness-110 backdrop-saturate-200 justify-between px-16 align-middle`">
         <div id="logo" class="flex gap-8 justify-center items-center">
             <nuxt-link to="/">
-                <nuxt-img src="/MJLogo.svg" alt="MJ Logo" width="90" height="60" />
+                <nuxt-img src="/logo-white.svg" alt="MJ Logo" width="90" height="60" style="height: 60px;" />
             </nuxt-link>
         </div>
         <div class="flex items-center space-x-3">
@@ -25,7 +25,7 @@
             </a>
         </div>
     </nav>
-    <div class="pt-16">
+    <div class="pt-[76px]">
         <slot />
     </div>
     <footer class="bg-black py-8 gap-4 text-white flex flex-col justify-center items-center">

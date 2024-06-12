@@ -26,9 +26,18 @@
         scroll-margin-top: 100px;
     }
 
-    ul {
+    ul, ol {
         @apply list-inside ml-6;
     }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: upper-roman;
+    }
+
     /* ul ul{
         list-style-type: square;
     } */
@@ -40,15 +49,15 @@
 
 body {
     color: theme('colors.gray.100');
-    background-color: theme('colors.gray.800');
+    background-color: theme('colors.zinc.900');
 }
 
-body::after, body::before {
+/* body::after, body::before {
     content: '';
     position: absolute;
     top: -200px;
     width: 0;
-    height: 9rem;
+    height: 5rem;
     filter: blur(9rem);
     border-radius: 50%;
     animation: grow 1s 1s forwards;
@@ -56,19 +65,19 @@ body::after, body::before {
 }
 
 body::after {
-    background: linear-gradient(to bottom, transparent, theme('colors.cyan.400'), transparent);
+    background: linear-gradient(to bottom, transparent, theme('colors.zinc.200'), transparent);
     transform-origin: top left;
-    transform: rotateZ(60deg);
+    transform: rotateZ(40deg);
     left: 150px;
-}
+} */
 
 
-body::before {
-    background: linear-gradient(to bottom, transparent, theme('colors.indigo.300'), transparent);
+/* body::before {
+    background: linear-gradient(to bottom, transparent, theme('colors.violet.900'), transparent);
     transform-origin: top right;
     transform: rotateZ(-60deg);
     right: 150px;
-}
+} */
 
 @keyframes grow {
     0% {

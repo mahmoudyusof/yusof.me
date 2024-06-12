@@ -10,7 +10,7 @@ useHead({
 })
 
 defineOgImageComponent('BlogPost', {
-    logo: '/MJLogo.svg'
+    logo: '/logo-white.svg'
 })
 const articles = await queryContent('/blog')
     .only(['title', 'description', '_path', 'date'])
@@ -185,7 +185,7 @@ const articles = await queryContent('/blog')
     position: absolute;
     inset: -50px 0;
     z-index: -1;
-    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6)) blur(0.1rem);
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6)) blur(0.5rem);
 }
 
 #about::before {
@@ -193,7 +193,7 @@ const articles = await queryContent('/blog')
     --finalY: 80px;
     --skew-deg: -4deg;
     transform: translateY(var(--initialY)) skewY(var(--skew-deg));
-    background: linear-gradient(-120deg, theme('colors.sky.600'), theme('colors.indigo.700'), theme('colors.purple.800'));
+    background: linear-gradient(-120deg, theme('colors.sky.800'), theme('colors.indigo.900'), theme('colors.purple.950'));
     animation: linear paralax forwards;
     animation-timeline: view();
 }
@@ -202,7 +202,7 @@ const articles = await queryContent('/blog')
     --initialY: 80px;
     --finalY: -80px;
     --skew-deg: 3deg;
-    background: linear-gradient(120deg, theme('colors.sky.600'), theme('colors.indigo.500'), theme('colors.purple.400'));
+    background: linear-gradient(120deg, theme('colors.sky.950'), theme('colors.indigo.800'), theme('colors.purple.700'));
     transform: translateY(var(--initialY)) skewY(var(--skew-deg));
     animation: linear paralax forwards;
     animation-timeline: view();
