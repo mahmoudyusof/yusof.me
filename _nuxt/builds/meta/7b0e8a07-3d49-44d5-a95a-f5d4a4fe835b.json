@@ -1,1 +1,0 @@
-{"id":"7b0e8a07-3d49-44d5-a95a-f5d4a4fe835b","timestamp":1718308916570,"matcher":{"static":{"/":{"prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":["/blog","/blog/client-side-inference","/blog/handle-unwanted-rerendering","/blog/scikit-learn-pipelines","/blog/datagenerator"]}
