@@ -42,9 +42,8 @@ export default defineNuxtConfig({
   },
   ogImage: {
     defaults: {
-      extension: 'jpeg',
-      cacheMaxAgeSeconds: 10, // to do remove this
-    },
+      extension: 'jpeg'
+    }
   },
   modules: [
     "@nuxt/content",
