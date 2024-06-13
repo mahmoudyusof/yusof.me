@@ -22,7 +22,9 @@
 </template>
 
 <script setup lang="ts">
-let base = useSiteConfig().url;
+let base = window ? window.location.origin : "https://mahmoudyusof.nuxt.space";
+// let base = useRuntimeConfig().app.baseURL as String || "https://mahmoudyusof.nuxt.space";
+console.log(base);
 base = base.endsWith('/') ? base.slice(0, -1) : base;
 const {title, fullPath} = defineProps<{title: string, fullPath: string}>();
 
