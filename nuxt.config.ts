@@ -35,10 +35,16 @@ export default defineNuxtConfig({
       },
     }
   },
-  routeRules : {
-    '/':  {prerender: true},
-    '/blog/**': {isr: true},
-    '/projects/**': {ssr: false}
+  routeRules: {
+    '/': { prerender: true },
+    '/blog/**': { isr: true },
+    '/projects/**': { ssr: false }
+  },
+  ogImage: {
+    defaults: {
+      extension: 'jpeg',
+      cacheMaxAgeSeconds: 10, // to do remove this
+    },
   },
   modules: [
     "@nuxt/content",
