@@ -37,7 +37,7 @@ useSeoMeta({
 <template>
   <div id="article" class=" border-gray-50 border-t border-b bg-zinc-950 grid grid-cols-5">
     <ShareToSocial :title="page.title" :fullPath="route.fullPath"  />
-    <article class="p-10 lg:col-span-3 col-span-5">
+    <article class="md:p-10 py-10 px-5 lg:col-span-3 col-span-5">
       <ContentRenderer :value="page" />
     </article>
     <div class="border-l border-double border-gray-300 pt-4 lg:col-span-1 lg:block hidden">
@@ -54,7 +54,7 @@ useSeoMeta({
 }
 
 article {
-  font-size: 1.25rem;
+  @apply md:text-xl;
 }
 
 #article hr {
